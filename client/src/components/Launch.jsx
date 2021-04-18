@@ -2,6 +2,7 @@ import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import Moment from 'react-moment';
 const LAUNCH_QUERY = gql`
   query LaunchQuery($flight_number: Int!) {
     launch(flight_number: $flight_number) {
@@ -45,6 +46,10 @@ const Launch = (props) => {
           Flight Number: {data.launch.flight_number}
         </li>
         <li className='list-group-item'>Launch Year: {launch_year}</li>
+        <li className='list-group-item'>
+          Launch Date and Time:{' '}
+          <Moment format='YYYY-MM-DD HH:MM'>{launch_date_local}</Moment>{' '}
+        </li>
         <li className='list-group-item'>
           Launch Success:{' '}
           <span
