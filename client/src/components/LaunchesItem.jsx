@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
+import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 const LaunchesItem = ({
   filter,
   flight_number,
@@ -22,10 +24,14 @@ const LaunchesItem = ({
               {mission_name}
             </span>
           </h4>
-          <p>Date: {launch_date_local}</p>
+          <p>
+            Date: <Moment format='YYYY-MM-DD'>{launch_date_local}</Moment>
+          </p>
         </div>
         <div className='col-md-3'>
-          <button className='btn btn-secondary'> Launch Details </button>
+          <Link to={'/launch/' + flight_number}>
+            <button className='btn btn-secondary'> Launch Details </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -44,10 +50,14 @@ const LaunchesItem = ({
               {mission_name}
             </span>
           </h4>
-          <p>Date: {launch_date_local}</p>
+          <p>
+            Date: <Moment format='YYYY-MM-DD'>{launch_date_local}</Moment>
+          </p>
         </div>
         <div className='col-md-3'>
-          <button className='btn btn-secondary'> Launch Details </button>
+          <Link to={'/launch/' + flight_number}>
+            <button className='btn btn-secondary'> Launch Details </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -66,10 +76,14 @@ const LaunchesItem = ({
               {mission_name}
             </span>
           </h4>
-          <p>Date: {launch_date_local}</p>
+          <p>
+            Date: <Moment format='YYYY-MM-DD'>{launch_date_local}</Moment>
+          </p>
         </div>
         <div className='col-md-3'>
-          <button className='btn btn-secondary'> Launch Details </button>
+          <Link to={'/launch/' + flight_number}>
+            <button className='btn btn-secondary'> Launch Details </button>
+          </Link>
         </div>
       </div>
     </div>

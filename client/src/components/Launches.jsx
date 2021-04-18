@@ -25,14 +25,18 @@ const Launches = () => {
     <div>
       <h1 className='display-4 my-3'>Launches</h1>
       <MissionKey />
-      <div>
-        <select onChange={handleFilter}>
-          <option value='all' selected>
-            all
-          </option>
-          <option value='success'>Success</option>
-          <option value='fail'>Fail</option>
-        </select>
+      <div class='mb-3 row'>
+        <div className='col-md-4'></div>
+        <div className='col-md-4'>
+          <select class='form-control' onChange={handleFilter}>
+            <option value='all' selected>
+              All Launches
+            </option>
+            <option value='success'>Successful Launches</option>
+            <option value='fail'>Failed Launches</option>
+          </select>
+        </div>
+        <div className='col-md-4'></div>
       </div>
       {data.launches.map((curr) => (
         <LaunchesItem
